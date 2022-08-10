@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = [
   { id: '1', title: 'First Post!', content: 'Hello!' },
   { id: '2', title: 'Second Post', content: 'More text' },
-  { id: '3', title: 'Third Post', content: 'Spin test' }
+  { id: '3', title: 'Third Post', content: 'Spin test' },
 ]
 
 const postsSlice = createSlice({
