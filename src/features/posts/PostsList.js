@@ -8,7 +8,11 @@ export const PostsList = () => {
   const posts = useSelector(state => state.posts)
 
   console.log('posts', posts)
-  const renderedPosts = posts.map(post => (
+  // Sort posts in reverse chronological order by datetime string
+  const orderedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date))
+
+  const renderedPosts = orderedPosts.map(post => {
+    return (
     <article className="post-excerpt" key={post.id}>
       <h3>{post.title}</h3>
       <PostAuthor userId={post.user} />
@@ -18,7 +22,8 @@ export const PostsList = () => {
         View Post
       </Link>
     </article>
-  ))
+    )
+    })
 
   return (
     <section className="posts-list">
