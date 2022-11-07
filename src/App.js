@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect
+  Redirect,
 } from 'react-router-dom'
 import { Navbar } from './app/Navbar'
 import { PostsList } from './features/posts/PostsList'
@@ -12,7 +12,7 @@ import { SinglePostPage } from './features/posts/SinglePostPage'
 import { EditPostForm } from './features/posts/EditPostForm'
 import { UserPage } from './features/users/UserPage'
 import { UsersList } from './features/users/UsersList'
-
+import { NotificationsList } from './features/notifications/NotificationsList'
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
       <Navbar />
       <div className="App">
         <Switch>
+          <Route exact path="/notifications" component={NotificationsList} />
           <Route
             exact
             path="/"
